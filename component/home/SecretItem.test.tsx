@@ -8,7 +8,7 @@ describe('SecretItem works as expected', () => {
             key: 'testsite',
             site: 'TEST_SITE',
         };
-        const { getByRole, debug } = render(
+        const { getByRole } = render(
             <SecretItem
                 k={model}
                 countDown={1}
@@ -19,7 +19,7 @@ describe('SecretItem works as expected', () => {
         const li = getByRole('listitem');
         expect(li).toBeInTheDocument();
 
-        expect(within(li).getByText(/TEST_SITE/)).toBeInTheDocument;
+        expect(within(li).getByText(/TEST_SITE/)).toBeInTheDocument();
     });
     test('onEdit calls with correct params', () => {
         const mockOnEdit = jest.fn();
@@ -27,7 +27,7 @@ describe('SecretItem works as expected', () => {
             key: 'testsite',
             site: 'TEST_SITE',
         };
-        const { getByRole, debug } = render(
+        const { getByRole } = render(
             <SecretItem
                 k={model}
                 countDown={1}
@@ -53,7 +53,7 @@ describe('SecretItem works as expected', () => {
             site: 'TEST_SITE',
             id: 'abcd',
         };
-        const { getByRole, debug } = render(
+        const { getByRole } = render(
             <SecretItem
                 k={model}
                 countDown={1}

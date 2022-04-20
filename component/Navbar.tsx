@@ -20,15 +20,23 @@ const Navbar = ({ onAddClick, error }: NavbarProps) => {
                 Two Factor Authentication
             </h2>
             <div className="flex-grow-1 w-full text-white">{error}</div>
-            <Button color="primary" variant="contained" onClick={onAddClick}>
+            <Button
+                color="primary"
+                variant="contained"
+                onClick={onAddClick}
+                data-testid="btnAdd"
+            >
                 <Add />
             </Button>
             <Button
                 color="primary"
                 variant="contained"
+                data-testid="btnLogout"
                 onClick={async () => {
-                    await dispatch(logout());
-                    router.replace('/login');
+                    try {
+                        await dispatch(logout());
+                        router.replace('/login');
+                    } catch (err) {}
                 }}
             >
                 <LogoutOutlined />
