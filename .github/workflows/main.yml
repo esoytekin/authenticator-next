@@ -27,6 +27,7 @@ jobs:
 
       - name: yarn build and test
         run: |
-          yarn build --if-present
+          yarn
           yarn test
+          yarn build
 
